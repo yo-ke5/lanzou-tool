@@ -86,8 +86,8 @@
 
 ### 6. 访问测试
 
-- `https://your-domain.com/` - 使用界面
-- `https://your-domain.com/admin` - 后台管理（需配置 admin/pass）
+- `https://域名/` - 使用界面
+- `https://域名/admin` - 后台管理（需配置 admin/pass）
 
 ---
 
@@ -99,7 +99,9 @@
 ```
 GET /?url={分享链接}&pwd={密码}&type=json
 ```
-
+```
+GET /?url={分享链接}&type=json
+```
 **返回示例：**
 
 ```json
@@ -117,39 +119,22 @@ GET /?url={分享链接}&pwd={密码}&type=json
 ```
 GET /?url={分享链接}&pwd={密码}
 ```
-#### 获取统计
+```
+GET /?url={分享链接}
+```
+#### 管理员后台
+```
+GET /admin
+```
+#### 获取解析统计
 ```
 GET /api/stats
 ```
-#### 获取记录
+#### 获取解析记录
 ```
 GET /api/records
 ```
-账号 API
-接口	方法	说明
-/api/login	POST	账号密码登录
-/api/dirs	POST	获取目录列表
-/api/files	POST	获取文件列表
-/api/upload	POST	上传文件
-/api/share	POST	获取分享信息
-/api/delete	POST	删除文件/文件夹
 
-### 解析蓝奏云文件
-```
-curl "https://your-domain.com/?url={分享链接}&type=json"
-```
-### 带密码解析
-```
-curl "https://your-domain.com/?url={分享链接}&pwd={密码}&type=json"
-```
-### 解析文件夹
-```
-curl "https://your-domain.com/?url={分享链接}&type=json"
-```
-### 解析优享版
-```
-curl "https://your-domain.com/?url={分享链接}&type=json"
-```
 ## 🔧 技术架构
 ```
                    ┌───────────────────┐
