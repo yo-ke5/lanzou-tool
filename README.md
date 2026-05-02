@@ -2,7 +2,13 @@
 [![Forks](https://img.shields.io/github/forks/yo-ke5/lanzou-tool?style=flat-square&logo=github)](https://github.com/yo-ke5/lanzou-tool/network/members)
 [![License](https://img.shields.io/github/license/yo-ke5/lanzou-tool?style=flat-square)](https://github.com/yo-ke5/lanzou-tool/blob/main/LICENSE)
 
+## ⭐ 项目热度
+
+[![Stargazers over time](https://starchart.cc/yo-ke5/lanzou-tool.svg?variant=adaptive)](https://starchart.cc/yo-ke5/lanzou-tool)
+
 ---
+
+***
 
 ## 📖 项目简介
 
@@ -84,10 +90,9 @@
 ### 基础接口
 
 #### 解析接口
+```
 GET /?url={分享链接}&pwd={密码}&type=json
-POST /api/parse
-
-text
+```
 
 **返回示例：**
 
@@ -101,15 +106,19 @@ text
   "file_size": "10.00 MB",
   "download_url": "https://..."
 }
+```
 302 跳转下载
-text
+```
 GET /?url={分享链接}&pwd={密码}
+```
 获取统计
-text
+```
 GET /api/stats
+```
 获取记录
-text
+```
 GET /api/records
+```
 账号 API
 接口	方法	说明
 /api/login	POST	账号密码登录
@@ -118,33 +127,25 @@ GET /api/records
 /api/upload	POST	上传文件
 /api/share	POST	获取分享信息
 /api/delete	POST	删除文件/文件夹
-登录示例
-bash
-curl -X POST "https://your-domain.com/api/login" \
-  -F "username=your_account" \
-  -F "password=your_password"
-上传示例
-bash
-curl -X POST "https://your-domain.com/api/upload" \
-  -F "PHPSESSID=xxx" \
-  -F "ylogin=xxx" \
-  -F "phpdisk_info=xxx" \
-  -F "file=@/path/to/file.zip"
-📝 使用示例
-bash
+
 # 解析蓝奏云文件
+```
 curl "https://your-domain.com/?url=https://lanzoux.com/xxxxxx&type=json"
-
+```
 # 带密码解析
+```
 curl "https://your-domain.com/?url=https://lanzoux.com/xxxxxx&pwd=1234&type=json"
-
+```
 # 解析文件夹
+```
 curl "https://your-domain.com/?url=https://lanzoux.com/bxxxxxx&type=json"
-
+```
 # 解析优享版
+```
 curl "https://your-domain.com/?url=https://ilanzou.com/s/xxxxxx&type=json"
+```
 🔧 技术架构
-text
+
 ┌─────────────────────────────────────────────┐
 │              Cloudflare Workers              │
 └─────────────────────┬───────────────────────┘
@@ -156,6 +157,7 @@ text
     │ API     │   │ (wyjx)  │  │ (HTML)  │
     └─────────┘   └─────────┘  └─────────┘
 数据库表结构
+```
 sql
 -- 解析缓存表
 CREATE TABLE parse_cache (
@@ -187,6 +189,7 @@ CREATE TABLE parse_records (
     download_url TEXT DEFAULT '',
     created_at INTEGER DEFAULT (strftime('%s','now'))
 );
+```
 ⚠️ 免责声明
 本项目仅供学习研究使用。严禁用于大规模爬取、破解付费功能、传播侵权内容等行为。作者不对因使用本项目导致的任何损失承担责任。
 
