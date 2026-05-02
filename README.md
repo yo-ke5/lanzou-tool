@@ -128,24 +128,24 @@ GET /api/records
 /api/share	POST	获取分享信息
 /api/delete	POST	删除文件/文件夹
 
-# 解析蓝奏云文件
+### 解析蓝奏云文件
 ```
 curl "https://your-domain.com/?url=https://lanzoux.com/xxxxxx&type=json"
 ```
-# 带密码解析
+### 带密码解析
 ```
 curl "https://your-domain.com/?url=https://lanzoux.com/xxxxxx&pwd=1234&type=json"
 ```
-# 解析文件夹
+### 解析文件夹
 ```
 curl "https://your-domain.com/?url=https://lanzoux.com/bxxxxxx&type=json"
 ```
-# 解析优享版
+### 解析优享版
 ```
 curl "https://your-domain.com/?url=https://ilanzou.com/s/xxxxxx&type=json"
 ```
-🔧 技术架构
-
+## 🔧 技术架构
+```
 ┌─────────────────────────────────────────────┐
 │              Cloudflare Workers              │
 └─────────────────────┬───────────────────────┘
@@ -156,6 +156,7 @@ curl "https://your-domain.com/?url=https://ilanzou.com/s/xxxxxx&type=json"
     │ 蓝奏云   │   │ D1数据库 │  │ 前端界面 │
     │ API     │   │ (wyjx)  │  │ (HTML)  │
     └─────────┘   └─────────┘  └─────────┘
+```
 数据库表结构
 ```
 sql
@@ -196,4 +197,8 @@ CREATE TABLE parse_records (
 📄 许可证
 MIT License
 
-<p align="center"> Made with ❤️ by <a href="https://github.com/yo-ke5">yo-ke5</a> </p> ```
+***
+
+<p align="center"> Made with ❤️ by <a href="https://github.com/yo-ke5">yo-ke5</a> </p> 
+
+
