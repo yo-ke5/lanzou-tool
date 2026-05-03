@@ -17,15 +17,15 @@
 ## 🖼️ 功能展示
 
 ### 解析界面
-![解析界面](https://via.placeholder.com/800x400?text=Parse+Interface)
+![解析界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/解析界面.png)
 *输入分享链接，一键获取下载地址*
 
 ### 文件管理
-![文件管理](https://via.placeholder.com/800x400?text=File+Manager)
+![文件管理](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/文件管理.png)
 *直观的文件列表和上传界面*
 
-### 后台统计
-![后台统计](https://via.placeholder.com/800x400?text=Admin+Stats)
+### 后台统计界面
+![后台统计界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/后台统计.png)
 *查看解析统计和使用记录*
 
 
