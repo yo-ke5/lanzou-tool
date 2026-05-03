@@ -16,18 +16,9 @@
 
 ## 🖼️ 功能展示
 
-### 解析界面
-![解析界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/解析界面.png)
-*输入分享链接，一键获取下载地址*
-
-### 文件管理
-![文件管理](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/文件管理.png)
-*直观的文件列表和上传界面*
-
-### 后台统计界面
-![后台统计界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/后台统计.png)
-*查看解析统计和使用记录*
-
+| 解析界面 | 文件管理 | 后台统计 |
+|:---:|:---:|:---:|
+| ![解析界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/解析界面.png) | ![文件管理](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/文件管理.png) | ![后台统计](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/后台统计.png) |
 
 ### ✨ 核心特性
 
