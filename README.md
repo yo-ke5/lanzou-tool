@@ -71,7 +71,7 @@
 2. 点击 **"创建数据库"**，输入名称 `wpjx`
 3. 进入 **"Workers & Pages" → 你的 Worker → 设置 → 绑定"**
 4. 点击 **"添加绑定"** → 选择 **"D1 数据库"**
-5. 变量名称填写 `wpjx`，选择刚创建的数据库
+5. 变量名称填写 `drive-tool`，选择刚创建的数据库
 
 ### 4. 配置环境变量（可选，用于后台管理）
 
@@ -158,7 +158,7 @@ GET /api/records
 │                └───────┬───────┘                        │
 │                        ▼                                │
 │         ┌─────────────────────────────┐                 │
-│         │       D1 数据库 (wpjx)       │                 │
+│         │    D1 数据库 (drive-tool)    │                 │
 │         │     (缓存/统计/解析记录)     │                 │
 │         └─────────────────────────────┘                 │
 │                        │                                │
@@ -213,6 +213,7 @@ CREATE TABLE IF NOT EXISTS parse_records (
     file_size TEXT DEFAULT '',
     download_url TEXT DEFAULT '',
     from_cache INTEGER DEFAULT 0,
+    msg TEXT DEFAULT '',
     created_at INTEGER DEFAULT (strftime('%s','now'))
 );
 ```
