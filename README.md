@@ -20,7 +20,7 @@
 
 | 解析界面 | 文件管理 | 后台统计 |
 |:---:|:---:|:---:|
-| ![解析界面](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/解析界面.png) | ![文件管理](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/文件管理.png) | ![后台统计](https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/后台统计.png) |
+| <img src="https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/解析界面.png" width="280"> | <img src="https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/文件管理.png" width="280"> | <img src="https://raw.githubusercontent.com/whortle/drive-tool/main/screenshots/后台统计.png" width="280"> |
 
 ### ✨ 核心特性
 
