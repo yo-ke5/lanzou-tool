@@ -1,7 +1,7 @@
 [![Stars](https://img.shields.io/github/stars/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/stargazers)
 [![Forks](https://img.shields.io/github/forks/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/network/members)
 [![License](https://img.shields.io/github/license/whortle/drive-tool?style=flat-square)](https://github.com/whortle/drive-tool/blob/main/LICENSE)
-
+[![在线体验](https://img.shields.io/badge/demo-在线体验-blue?style=flat-square&logo=google-chrome)](https://drive-tool.ccwu.cc)
 ## ⭐ 项目热度
 
 [![Stargazers over time](https://starchart.cc/whortle/drive-tool.svg?variant=adaptive)](https://starchart.cc/whortle/drive-tool)
@@ -13,6 +13,8 @@
 ## 📖 项目简介
 
 **蓝奏云 Worker 工具** 是一个基于 Cloudflare Workers 平台的蓝奏云网盘解析与上传工具。能够解析蓝奏云分享链接，获取文件真实下载地址，支持文件夹解析、文件上传、管理文件、分享链接生成等完整功能。
+
+**在线体验：** [https://drive-tool.ccwu.cc](https://drive-tool.ccwu.cc)
 
 ## 🖼️ 功能展示
 
