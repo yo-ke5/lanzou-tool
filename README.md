@@ -1,7 +1,24 @@
-[![Stars](https://img.shields.io/github/stars/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/stargazers)
-[![Forks](https://img.shields.io/github/forks/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/network/members)
-[![License](https://img.shields.io/github/license/whortle/drive-tool?style=flat-square)](https://github.com/whortle/drive-tool/blob/main/LICENSE)
-[![在线体验](https://img.shields.io/badge/demo-在线体验-blue?style=flat-square&logo=google-chrome)](https://drive-tool.ccwu.cc)
+<div align="center">
+
+# ☁️ 蓝奏云 Worker 工具
+
+[![GitHub Stars](https://img.shields.io/github/stars/whortle/drive-tool?style=for-the-badge&logo=github&color=yellow)](https://github.com/whortle/drive-tool/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/whortle/drive-tool?style=for-the-badge&logo=github&color=blue)](https://github.com/whortle/drive-tool/network/members)
+[![GitHub License](https://img.shields.io/github/license/whortle/drive-tool?style=for-the-badge&logo=apache&color=green)](https://github.com/whortle/drive-tool/blob/main/LICENSE)
+
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2021-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
+[![D1 Database](https://img.shields.io/badge/D1_Database-FF9A00?style=for-the-badge&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/d1/)
+
+[![在线体验](https://img.shields.io/badge/✨_在线体验-立即使用-00A98F?style=for-the-badge&logo=google-chrome&logoColor=white)](https://drive-tool.ccwu.cc)
+[![API文档](https://img.shields.io/badge/📚_API文档-查看详情-673AB7?style=for-the-badge&logo=readthedocs&logoColor=white)](https://github.com/whortle/drive-tool#-api-文档)
+[![最后提交](https://img.shields.io/github/last-commit/whortle/drive-tool?style=for-the-badge&logo=github&color=orange)](https://github.com/whortle/drive-tool/commits/main)
+
+[![GitHub Issues](https://img.shields.io/github/issues/whortle/drive-tool?style=flat-square&logo=github&color=red)](https://github.com/whortle/drive-tool/issues)
+[![GitHub PRs](https://img.shields.io/github/issues-pr/whortle/drive-tool?style=flat-square&logo=github&color=orange)](https://github.com/whortle/drive-tool/pulls)
+[![代码大小](https://img.shields.io/github/repo-size/whortle/drive-tool?style=flat-square)](https://github.com/whortle/drive-tool)
+
+</div>
 ## ⭐ 项目热度
 
 [![Stargazers over time](https://starchart.cc/whortle/drive-tool.svg?variant=adaptive)](https://starchart.cc/whortle/drive-tool)
