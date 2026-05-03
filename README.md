@@ -1,10 +1,10 @@
-[![Stars](https://img.shields.io/github/stars/yo-ke5/lanzou-tool?style=flat-square&logo=github)](https://github.com/yo-ke5/lanzou-tool/stargazers)
-[![Forks](https://img.shields.io/github/forks/yo-ke5/lanzou-tool?style=flat-square&logo=github)](https://github.com/yo-ke5/lanzou-tool/network/members)
-[![License](https://img.shields.io/github/license/yo-ke5/lanzou-tool?style=flat-square)](https://github.com/yo-ke5/lanzou-tool/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/stargazers)
+[![Forks](https://img.shields.io/github/forks/whortle/drive-tool?style=flat-square&logo=github)](https://github.com/whortle/drive-tool/network/members)
+[![License](https://img.shields.io/github/license/whortle/drive-tool?style=flat-square)](https://github.com/whortle/drive-tool/blob/main/LICENSE)
 
 ## ⭐ 项目热度
 
-[![Stargazers over time](https://starchart.cc/yo-ke5/lanzou-tool.svg?variant=adaptive)](https://starchart.cc/yo-ke5/lanzou-tool)
+[![Stargazers over time](https://starchart.cc/whortle/drive-tool.svg?variant=adaptive)](https://starchart.cc/whortle/drive-tool)
 
 ---
 
@@ -224,10 +224,10 @@ MIT License
 
 如有问题或建议，欢迎通过以下方式联系：
 
-- GitHub Issues: [提交问题](https://github.com/yo-ke5/lanzou-tool/issues)
+- GitHub Issues: [提交问题](https://github.com/whortle/drive-tool/issues)
 
 ***
 
-<p align="center"> Made with ❤️ by <a href="https://github.com/yo-ke5">yo-ke5</a> </p> 
+<p align="center"> Made with ❤️ by <a href="https://github.com/whortle">南烛</a> </p> 
 
 
