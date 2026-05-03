@@ -1,3 +1,21 @@
+/**
+ * ============================================================================
+ * @name        蓝奏云 Worker 工具
+ * @version     1.0.0
+ * @author      南烛 (whortle)
+ * @license     MIT
+ * @repository  https://github.com/whortle/drive-tool
+ * @website     https://drive-tool.ccwu.cc
+ * @description 基于 Cloudflare Workers 的蓝奏云网盘解析与上传工具
+ * ============================================================================
+ *
+ * ============================================================================
+ * @note 本工具仅供学习研究使用，请勿用于大规模爬取或侵权传播
+ * @note 蓝奏云页面结构可能变动，如解析失效请提交 Issue
+ * ============================================================================
+ */
+
+
 const CACHE_TTL = 1200;
 const DB_NAME = 'drive-tool';
 const AES_KEY = 'lanZouY-disk-app';
