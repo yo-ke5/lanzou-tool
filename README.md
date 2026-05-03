@@ -14,6 +14,21 @@
 
 **蓝奏云 Worker 工具** 是一个基于 Cloudflare Workers 平台的蓝奏云网盘解析与上传工具。能够解析蓝奏云分享链接，获取文件真实下载地址，支持文件夹解析、文件上传、管理文件、分享链接生成等完整功能。
 
+## 🖼️ 功能展示
+
+### 解析界面
+![解析界面](https://via.placeholder.com/800x400?text=Parse+Interface)
+*输入分享链接，一键获取下载地址*
+
+### 文件管理
+![文件管理](https://via.placeholder.com/800x400?text=File+Manager)
+*直观的文件列表和上传界面*
+
+### 后台统计
+![后台统计](https://via.placeholder.com/800x400?text=Admin+Stats)
+*查看解析统计和使用记录*
+
+
 ### ✨ 核心特性
 
 - 🛡️ **边缘计算**：基于 Cloudflare Workers 平台，避免 IP 封禁
