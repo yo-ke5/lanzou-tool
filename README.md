@@ -12,7 +12,7 @@
 
 ## 📖 项目简介
 
-**蓝奏云 Worker 工具** 是一个基于 Cloudflare Workers 平台的蓝奏云网盘解析与上传工具。能够解析蓝奏云分享链接，获取文件真实下载地址，支持文件夹解析、文件上传、分享链接生成等完整功能。
+**蓝奏云 Worker 工具** 是一个基于 Cloudflare Workers 平台的蓝奏云网盘解析与上传工具。能够解析蓝奏云分享链接，获取文件真实下载地址，支持文件夹解析、文件上传、管理文件、分享链接生成等完整功能。
 
 ### ✨ 核心特性
 
@@ -57,7 +57,7 @@
 ### 1. 创建 Worker
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com)，进入 **Workers & Pages**
-2. 点击 "创建服务"，输入服务名称（如 `lanzou-tool`）
+2. 点击 "创建服务"，输入服务名称（如 `drive-tool`）
 
 ### 2. 上传代码
 
@@ -158,7 +158,7 @@ GET /api/records
 │                └───────┬───────┘                        │
 │                        ▼                                │
 │         ┌─────────────────────────────┐                 │
-│         │       D1 数据库 (wyjx)       │                 │
+│         │       D1 数据库 (wpjx)       │                 │
 │         │     (缓存/统计/解析记录)     │                 │
 │         └─────────────────────────────┘                 │
 │                        │                                │
@@ -203,14 +203,16 @@ CREATE TABLE parse_stats (
 );
 
 -- 解析记录表
-CREATE TABLE parse_records (
+CREATE TABLE IF NOT EXISTS parse_records (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     url TEXT NOT NULL,
     pwd TEXT DEFAULT '',
     type TEXT DEFAULT '',
     success INTEGER DEFAULT 0,
     file_name TEXT DEFAULT '',
+    file_size TEXT DEFAULT '',
     download_url TEXT DEFAULT '',
+    from_cache INTEGER DEFAULT 0,
     created_at INTEGER DEFAULT (strftime('%s','now'))
 );
 ```
