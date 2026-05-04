@@ -22,6 +22,17 @@ const AES_KEY = 'lanZouY-disk-app';
 const DESKTOP_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
 const MOBILE_UA = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36';
 const ILENZOU_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+const LANZOU_HEADERS = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'Accept-Language': 'zh-CN;q=0.9,zh-HK;q=0.8,zh-TW;q=0.7',
+    'Cache-Control': 'max-age=0',
+    'X-Forwarded-For': '0.0.0.0'
+};
+const ILENZOU_HEADERS = {
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'zh-CN;q=0.9,zh-HK;q=0.8,zh-TW;q=0.7',
+    'X-Forwarded-For': '0.0.0.0'
+};
 const DOUPLOAD_URL = 'https://pc.woozooo.com/doupload.php';
 const UPLOAD_URL = 'https://pc.woozooo.com/html5up.php';
 const LOGIN_URL = 'https://up.woozooo.com/mlogin.php';
@@ -257,13 +268,13 @@ function nameFormat(name) { return name.replace(/\xa0/g,' ').replace(/\u3000/g,'
 function isNameValid(filename) { const ext = filename.split('.').pop().toLowerCase(); return VALID_SUFFIX.includes(ext); }
 function buildCookieStr(phpsessid, ylogin, phpdiskInfo) { return `PHPSESSID=${phpsessid}; ylogin=${ylogin}; phpdisk_info=${phpdiskInfo}`; }
 function lanzouHeaders(cookie, referer = 'https://pc.woozooo.com/mydisk.php') {
-    return { 'User-Agent': DESKTOP_UA, 'Referer': referer, 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Origin': 'https://pc.woozooo.com', 'Accept-Language': 'zh-CN,zh;q=0.9', 'Cookie': cookie };
+    return { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Referer': referer, 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Origin': 'https://pc.woozooo.com', 'Cookie': cookie };
 }
 
 async function login(username, password) {
     const resp = await fetch(LOGIN_URL, {
         method: 'POST',
-        headers: { 'User-Agent': DESKTOP_UA, 'Referer': LOGIN_URL, 'Accept': '*/*', 'Origin': 'https://up.woozooo.com', 'Accept-Language': 'zh-CN,zh;q=0.9', 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Referer': LOGIN_URL, 'Origin': 'https://up.woozooo.com', 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ task:'3', uid:username, pwd:password, setSessionId:'', setSig:'', setScene:'', setTocen:'', formhash:'' }).toString(),
         redirect: 'manual'
     });
@@ -420,7 +431,7 @@ async function parseIlanzou(url, pwd) {
     if (pwd) params.append('code', pwd);
 
     const resp = await fetch(`https://api.ilanzou.com/unproved/recommend/list?${params.toString()}`, {
-        headers: { 'Accept':'application/json, text/plain, */*', 'Referer':'https://www.ilanzou.com/', 'User-Agent': ILENZOU_UA }
+        headers: { ...ILENZOU_HEADERS, 'Referer':'https://www.ilanzou.com/', 'User-Agent': ILENZOU_UA }
     });
     const data = await resp.json();
 
@@ -456,7 +467,7 @@ async function getIlanzouDownloadUrl(fileIds, uuid) {
     const params = new URLSearchParams({ downloadId, enable:'1', devType:'6', uuid, timestamp:encTs, auth });
     const resp = await fetch(`https://api.ilanzou.com/unproved/file/redirect?${params.toString()}`, {
         redirect: 'manual',
-        headers: { 'Referer':'https://www.ilanzou.com/', 'User-Agent': ILENZOU_UA }
+        headers: { ...ILENZOU_HEADERS, 'Referer':'https://www.ilanzou.com/', 'User-Agent': ILENZOU_UA }
     });
 
     if (resp.status >= 300 && resp.status < 400) {
@@ -481,7 +492,7 @@ async function parseLanzou(url, pwd) {
     for (const domain of domains) {
         try {
             const resp = await fetch(`https://${domain}/${shareId}${queryStr}`, {
-                headers: { 'User-Agent': DESKTOP_UA, 'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language':'zh-CN;q=0.9' },
+                headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Referer': `https://${domain}/` },
                 redirect: 'follow'
             });
             const text = await resp.text();
@@ -536,13 +547,13 @@ async function parseLanzou(url, pwd) {
     if (iframeMatch) {
         try {
             const iframeResp = await fetch(`https://${usedDomain}${iframeMatch[1]}`, {
-                headers: { 'User-Agent': DESKTOP_UA, 'Referer': `https://${usedDomain}/` }, redirect: 'follow'
+                headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Referer': `https://${usedDomain}/` }, redirect: 'follow'
             });
             const iframeHtml = await iframeResp.text();
             if (iframeHtml) {
                 const jsUrlMatch = iframeHtml.match(/https?:\/\/waf\.woozooo\.com\/pc\/.+?\.js/);
                 if (jsUrlMatch) {
-                    const jsResp = await fetch(jsUrlMatch[0], { headers: { 'User-Agent': DESKTOP_UA } });
+                    const jsResp = await fetch(jsUrlMatch[0], { headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Referer': `https://${usedDomain}/` } });
                     const jsContent = await jsResp.text();
                     if (jsContent) js = jsContent;
                 } else { js = iframeHtml; }
@@ -590,7 +601,7 @@ async function parseLanzou(url, pwd) {
 
     const ajaxResp = await fetch(`https://${usedDomain}/ajaxm.php?file=${fileid}`, {
         method: 'POST',
-        headers: { 'User-Agent': DESKTOP_UA, 'Content-Type':'application/x-www-form-urlencoded', 'Referer': `https://${usedDomain}/` },
+        headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Content-Type':'application/x-www-form-urlencoded', 'Referer': `https://${usedDomain}/` },
         body: new URLSearchParams({ action:'downprocess', sign, p:pwd||'', websign, websignkey }).toString()
     });
     const ajaxText = await ajaxResp.text();
@@ -619,7 +630,7 @@ async function parseLanzou(url, pwd) {
 }
 
 async function getLanzouDirectLink(url) {
-    const headers = { 'User-Agent': DESKTOP_UA, 'Cookie': 'down_ip=1', 'Referer': 'https://www.lanzoui.com/' };
+    const headers = { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Cookie': 'down_ip=1', 'Referer': 'https://www.lanzoui.com/' };
 
     const resp1 = await fetch(url, { headers, redirect: 'manual' });
     if (resp1.status >= 300 && resp1.status < 400) {
@@ -815,7 +826,7 @@ async function parseLanzouFolder(html, js, shareId, pwd, domain) {
         parameter.pg = page;
         const resp = await fetch(`https://${domain}/filemoreajax.php`, {
             method: 'POST',
-            headers: { 'User-Agent': DESKTOP_UA, 'Content-Type':'application/x-www-form-urlencoded', 'Referer': `https://${domain}/` },
+            headers: { ...LANZOU_HEADERS, 'User-Agent': DESKTOP_UA, 'Content-Type':'application/x-www-form-urlencoded', 'Referer': `https://${domain}/` },
             body: new URLSearchParams(parameter).toString()
         });
         const json = await resp.json();
@@ -1612,3 +1623,4 @@ export default {
         return jsonResponse({ success: false, msg: '未知路由' }, 404);
     }
 };
+
